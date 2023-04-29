@@ -1,25 +1,20 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
-import axios from "axios";
+import React from "react";
 
-const Naus = () => {
 
-  const [naus, setNaus] = useState([]);
+const Naus = ({nau, indice, setIndex , setMostrarFitxa, setMostrarLlista}) => {
 
-  const urlNaus = "https://swapi.dev/api/starships/";
-
-  useEffect(() => {
-    axios.get(urlNaus).then((response) => setNaus(response.data.results));
-  }, []);
+  const mostrarFitxa=(indice)=>{
+    setIndex(indice);
+    setMostrarFitxa(true);
+    setMostrarLlista(false);
+  }
 
   return (
     <>
-      {naus.map((nau) => (
-        <div key={nau.name} className="nau">
+        <div key={nau.name} className="nau" onClick={()=>mostrarFitxa(indice)}>
           <h2>{nau.name.toUpperCase()}</h2>
           <p>{nau.model}</p>
         </div>
-      ))}
     </>
   );
 };
