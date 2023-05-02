@@ -10,7 +10,10 @@
   --color-snd-:#151515;
   --color-text-:#a1a1a1;
   --props-text-:#f1f1f1;
+  --line-bttm--:#2d62a5;
+  --yllw-galaxy--:yellow;
 }
+
 
 header{
   display: flex;
@@ -21,6 +24,106 @@ header{
 header img{
   margin: 30px;
 }
+
+/* -----------Nav------------- */
+
+.nav-container{
+  display: flex;
+  justify-content: center;
+}
+
+.nav-link{
+display: flex;
+justify-content: center;
+margin-top: 10px;
+margin-bottom: 5px;
+width: 96%;
+border-bottom: 2px solid var(--color-snd-);
+border-top: 2px solid var(--color-snd-);
+padding: 10px 20px
+}
+
+a{
+  font-family:'Jura', sans-serif; ;
+  text-decoration: none;
+  color: var(--props-text-);
+  background-color: var(--color-bg-);
+  font-size: 1.2em;
+  border: 2px solid var(--color-snd-);
+  padding: 10px 20px;
+  transition: 0.4s;
+}
+
+.actived,
+a:hover {
+  border-bottom: 2px solid var(--line-bttm--);
+}
+
+/* ------Home--------- */
+
+.home-conatiner{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+}
+
+.home-text{
+  width: 50%;
+  color: var(--color-text-);
+  background-color: var(--color-bg-);
+  padding: 30px 20px 60px 20px;
+  font-size: 1.2em;
+}
+
+.btn-home{
+  display: flex;
+  border-radius: 15px;
+  overflow: hidden;
+  padding-right: 50px;
+  transition: 1s ease;
+  border: 2px dotted var(--props-text-);
+}
+
+.btn-home:hover{
+  background-image: url("./images/background-icon.jpg");
+  border: 2px dotted var(--props-text-);
+  font-size: 1.8em;
+}
+
+.btn-home .icono {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  left: -40px;
+  transition: .8s ease-in-out all;
+  background-color: transparent;
+}
+
+.btn-home:hover .icono {
+  left: 325px
+}
+
+.btn-home .icono svg {
+  transform: rotate(90deg);
+  color: var(--yllw-galaxy--);
+  background-color: transparent;
+}
+
+
+/* ---------Error----------- */
+
+.error{
+  display: flex;
+  justify-content: center;
+}
+.error img{
+  background-size: cover;
+}
+
+
+/* -----------Starships---------- */
 
 .llista{
   display: flex;
@@ -50,6 +153,26 @@ h2{
   font-weight: 700;
 }
 
+button{
+  padding: 5px 20px;
+  background-color: var(--color-bg-);
+  border: 2px solid yellow;
+  color: var(--props-text-);
+  font-size: 1.2em;
+  border-radius: 15px;
+  margin-top: 10px;
+  transition: .3s;
+}
+
+button:hover{
+  background-color: var(--color-text-);
+  color: var(--color-bg-);
+}
+
+main{
+  margin-bottom: 20px;
+}
+
 /* --------Fitxa Nau----------- */
 
 .container{
@@ -65,7 +188,7 @@ h2{
 
 .container img{
   width: 80%;
-  border-bottom: 2px solid #2d62a5;
+  border-bottom: 2px solid var(--line-bttm--);
 }
 
 .container h1{
@@ -107,4 +230,8 @@ span{
   color:var(--color-text-);
   background-color: transparent;
   margin-left: 10px;
+}
+
+.spinner{
+  margin: 30px;
 }

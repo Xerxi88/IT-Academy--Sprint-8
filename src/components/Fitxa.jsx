@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import imageError from '../images/imageNotFound.jpg';
 
 const Fitxa = ({nau, index ,setMostrarLlista, setMostrarFitxa}) => {
 
@@ -7,11 +8,22 @@ const Fitxa = ({nau, index ,setMostrarLlista, setMostrarFitxa}) => {
     setMostrarLlista(true)
   }
 
+  const [imageExists, setImageExists] = useState(false);
+  const imgUrl = `https://starwars-visualguide.com/assets/img/starships/${index}.jpg`;
+ 
+
+  useEffect(() => {
+    const img = new Image();
+    img.onload = () => setImageExists(true);
+    img.onerror = () => setImageExists(false);
+    img.src = imgUrl;
+  }, [imgUrl]);
+
   return (
     <>
       <div className="container" onClick={()=>mostrarLlista()}>
         <h1>{nau[index].name.toUpperCase()}</h1>
-        <img src={`https://starwars-visualguide.com/assets/img/starships/${index}.jpg`} alt="" />
+        {imageExists ? <img src={imgUrl} alt={nau[index].name} /> : <img src={imageError} alt={nau[index].name} />}
         <section className="info">
           <p className="dates">MODEL:<span>{nau[index].model.toUpperCase()}</span></p>
           <p className="dates">STARSHIP CLASS:<span>{nau[index].starship_class.toUpperCase()}</span></p>
