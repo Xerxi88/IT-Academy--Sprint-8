@@ -56,10 +56,11 @@ const Main = () => {
 
         {mostrarFitxa &&
           naus.map((nau, indice) => {
-            return indice === index ? (
+            return indice === index ?(
               <Fitxa
                 nau={naus}
                 index={indice}
+                imatge={nau.url.substr(-3,2)}
                 setMostrarFitxa={setMostrarFitxa}
                 setMostrarLlista={setMostrarLlista}
               />

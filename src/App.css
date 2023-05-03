@@ -215,12 +215,6 @@ main{
   background-color: transparent;
 }
 
-.pilots{
-  width: 100%;
-  text-align: left;
-  background-color: transparent;
-}
-
 .dates{
   background-color:transparent;
   font-weight: bold;
@@ -232,6 +226,54 @@ span{
   margin-left: 10px;
 }
 
-.spinner{
-  margin: 30px;
+/* --------Footer-Fitxa-------- */
+
+.footer-container{
+  width: 100%;
+  display: flex;
+  margin-top: 20px;
+  background-color: transparent;
+}
+
+/* -------Pilots--------- */
+
+.pilots-starships, .films-starships{
+  display: flex;
+  width: 50%;
+  background-color: transparent;
+}
+
+.pilots{
+  display: flex;
+  background-color: transparent;
+  padding-bottom: 10px;
+}
+
+.pilots img{
+  width: 70px;
+  height: 70px;
+  margin: 0px 5px;
+  border: none;
+  border-radius: 20%;
+}
+
+.no-pilots{
+  background-color: transparent;
+  padding-left: 30px;
+}
+
+/* -------Films-------- */
+
+.films{
+  display: flex;
+  width: 25%;
+  background-color: transparent;
+  padding-bottom: 10px;
+}
+
+.films img{
+  width: 100%;
+  margin:0px 5px;
+  border: none;
+  border-radius: 10px;
 }

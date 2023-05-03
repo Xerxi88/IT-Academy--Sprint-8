@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from "react";
 import imageError from '../images/imageNotFound.jpg';
+import Pilots from "./Pilots";
+import Films from "./Films";
 
-const Fitxa = ({nau, index ,setMostrarLlista, setMostrarFitxa}) => {
+const Fitxa = ({nau, index ,setMostrarLlista, setMostrarFitxa, imatge}) => {
 
   const mostrarLlista=()=>{
     setMostrarFitxa(false)
@@ -9,7 +11,7 @@ const Fitxa = ({nau, index ,setMostrarLlista, setMostrarFitxa}) => {
   }
 
   const [imageExists, setImageExists] = useState(false);
-  const imgUrl = `https://starwars-visualguide.com/assets/img/starships/${index}.jpg`;
+  const imgUrl = `https://starwars-visualguide.com/assets/img/starships/${imatge}.jpg`;
  
 
   useEffect(() => {
@@ -44,9 +46,14 @@ const Fitxa = ({nau, index ,setMostrarLlista, setMostrarFitxa}) => {
           <p className="dates">MAXIMUM SPEED IN REALSPACE:<span>{nau[index].MGLT} MGLT</span></p>
           </div>
         </section>
-        <div className="pilots">
-            PILOTS:<span></span>
-        </div>
+        <section className="footer-container">
+          <div className="pilots-starships">
+            <Pilots pilot={nau[index].pilots}/>
+          </div>
+          <div className="films-starships">
+            <Films films={nau[index].films}/>
+          </div>
+        </section>
       </div>
     </>
   );
