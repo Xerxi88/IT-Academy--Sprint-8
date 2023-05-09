@@ -1,15 +1,15 @@
-import React, { useRef, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../App.css";
 import logo from "../images/logo.png";
 import icon from "../images/lightsaber.png";
 
 const Modal = ({ setOpenLogin}) => {
-  const inputRef = useRef(null);
+  const [user,setUser]=useState("")
 
   useEffect(() => {
     const storedUser = window.localStorage.getItem("User");
     if (storedUser) {
-      inputRef.current.value = storedUser;
+      setUser(storedUser);
     }
   }, []);
 
@@ -17,22 +17,21 @@ const Modal = ({ setOpenLogin}) => {
     setOpenLogin(false);
   };
 
-  const register = () => {
-    const user = inputRef.current.value;
+  const saveUser = (user) => {
+    setUser(user);
     window.localStorage.setItem("User", user);
-  };
-
+  }
+  
   return (
     <>
       <main className="modal">
         <section className="panell">
           <div className="header-login">
-            <img src={logo} alt="" width="160px" />
-            <img src={icon} className="close" onClick={closeLogin} alt=""/>
+           <img src={logo} alt="" width="160px" />
+           <img src={icon} className="close" onClick={closeLogin}/>
           </div>
           <p className="text-login">ENTER YOUR USERNAME</p>
-          <input type="text" placeholder={"Username"} ref={inputRef} />
-          <button onClick={register}>Register</button>
+          <input type="text" placeholder={"Username"} onChange={(e)=>saveUser(e.target.value)} value={user}/>
         </section>
       </main>
     </>
