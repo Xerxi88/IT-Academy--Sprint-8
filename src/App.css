@@ -24,6 +24,104 @@ header{
 header img{
   margin: 30px;
 }
+/* ---------Login---------- */
+
+.login{
+
+  position: absolute;
+  top:10%;
+  left: 90%;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+.login:hover, .logout:hover{
+  color: var(--yllw-galaxy--)
+}
+
+.logout{
+  color: #a1a1a1;
+  font-size: 1.5em;
+  cursor: pointer;
+  background-color: transparent;
+  padding-top: 5px ;
+  text-align: end;
+}
+
+.login-box{
+  display: flex;
+}
+
+.modal{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.panell{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -65%);
+  width: 35%;
+  height: 45%;
+  margin-right: 10px;
+  background-color: var(--color-snd-);
+  padding:20px;
+ 
+}
+.header-login, .header-login img{
+  background-color: transparent;
+  margin: 15px 0px;
+
+}
+
+.close{
+  position: fixed;
+  top:0px;
+  right: 15px;
+  width: 40px;
+  background-color: transparent;
+}
+.close:hover{
+  transform: scale(1.2);
+}
+
+.text-login{
+  color: var(--yllw-galaxy--);
+  font-size: 1.6em;
+  margin-bottom: 20px;
+}
+
+.panell input{
+  width: 85%;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--props-text-);
+  font-size: 1.1em;
+  padding: 10px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.panell button{
+  width: 85%;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--color-text-);
+  color:var(--props-text-);
+  font-size: 1.1em;
+  padding: 10px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+.panell button:hover{
+  background-color: var(--line-bttm--);
+  color:var(--props-text-);
+}
+
 
 /* -----------Nav------------- */
 
@@ -129,6 +227,9 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.spinner{
+  margin-top: 20px;
 }
 .nau{
   width: 70%;
