@@ -7,12 +7,13 @@ import Nav from "./Nav"
 import { BrowserRouter,Route, Navigate, Routes } from "react-router-dom";
 import { useState } from "react";
 import Modal from "./components/Modal"
-
+import {Context} from "./context/UserContext";
+import PrivateRoute from "./routes/PrivateRoutes";
 
 function App() {
 
   const [openLogin,setOpenLogin]=useState(false);
- 
+
   const openLoger=()=>{
     setOpenLogin(true);
   }
@@ -20,6 +21,7 @@ function App() {
   return (
 
     <BrowserRouter>
+    <Context>
       {openLogin && <Modal setOpenLogin={setOpenLogin}/>}
       <header>
         <div className="login-box">
@@ -31,10 +33,15 @@ function App() {
       <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/home" element={<Navigate to="/"/>}/>
-          <Route path="/starships" element={<Main/>} />
+          <Route path="/starships" element={
+          <PrivateRoute>
+          <Main/>
+          </PrivateRoute>
+          } />
+          <Route path="/login" element={<Modal setOpenLogin={setOpenLogin}/> }/>
           <Route path="*" element={<Error/>}/>
       </Routes>
-
+      </Context>
     </BrowserRouter>
     
   );

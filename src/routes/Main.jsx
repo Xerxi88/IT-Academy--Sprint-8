@@ -20,7 +20,6 @@ const Main = () => {
   
    useEffect(() => {
      axios.get(urlNaus).then((response) => {
-      console.log(pagina)
        setNaus((prev)=>[...prev,...response.data.results]);
        setLoading(false);
      });
