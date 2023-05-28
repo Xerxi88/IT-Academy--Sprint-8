@@ -6,7 +6,7 @@ const PrivateRoute = ({children}) => {
     const {user}=useContext(UserContext);
   return (user)
     ? children
-    : <Navigate to="/starships"/>
+    : <Navigate to="/"/>
 }
 
 export default PrivateRoute
